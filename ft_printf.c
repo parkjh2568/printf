@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 12:27:44 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/25 16:55:27 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/25 19:06:01 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ int		config_type(const char *input, int i, int *j)
 {
 	while ((*j = *j + 1))
 	{
-		if (!(input[i + *j] >= 48 && input[i + *j] <= 57) || input[i + *j] != 78
-				|| input[i + *j] != '-' || input[i + *j] != '*')
+		if (!(input[i + *j] >= '0' && input[i + *j] <= '9') && input[i + *j] != '.'
+				&& input[i + *j] != '-' && input[i + *j] != '*')
 			break ;
 	}
+
 	if (input[i + *j] == '%')
 		return (1);
 	else if (input[i + *j] == 'c')
@@ -47,25 +48,26 @@ int		print_pp(void)
 	return (1);
 }
 
-int		config_type2(int i, const char *input)
+int		config_type2(int conf, const char *input, int i, va_list lst)
 {
-	if (i == 1)
+
+	if (conf == 1)
 		return (print_pp());
-/*	else if (i == 2)
+/*	else if (conf == 2)
 		return ();
-	else if (i == 3)
+	else if (conf == 3)
 		return ();
-	else if (i == 4)
+	else if (conf == 4)
+		return ();*/
+	else if (conf == 5)
+		return (ft_printf_d(input, i, lst, per_wd(conf)));
+/*	else if (conf == 6)
 		return ();
-	else if (i == 5)
+	else if (conf == 7)
 		return ();
-	else if (i == 6)
+	else if (conf == 8)
 		return ();
-	else if (i == 7)
-		return ();
-	else if (i == 8)
-		return ();
-	else if (i == 9)
+	else if (conf == 9)
 		return ();	*/
 	return (0);
 }
@@ -83,7 +85,7 @@ int		search_word(const char *input, va_list lst, char *word, int w)
 			if (config_type(input, i, &j) > 0)
 			{
 				j = 0;
-				w += config_type2(config_type(input, i, &j), input);
+				w += config_type2(config_type(input, i, &j), input, i, lst);
 				i += j;
 			}
 		}
