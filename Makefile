@@ -6,17 +6,17 @@
 #    By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/25 11:02:46 by junhypar          #+#    #+#              #
-#    Updated: 2020/07/25 13:09:59 by junhypar         ###   ########.fr        #
+#    Updated: 2020/07/25 14:51:46 by junhypar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-SRCS	=	
+SRCS	=	ft_printf.c	
 
 OBJS	=	${SRCS:.c=.o}
 
-CC		=	gcc -Wall -Wextra -Werror
+CC		=	gcc 
 
 all:		${NAME}
 

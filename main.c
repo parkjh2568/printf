@@ -2,8 +2,8 @@
 #include "libftprintf.h"
 int main()
 {
-	char *a;
-	a = ft_strdup("kkk");
-	test(a);
-	free(a);
+	int a, b;
+	a = printf("oh this is = %%");
+	b = ft_printf("oh this is = %%");
+	printf("\na = %d, b = %d",a,b);	
 }
