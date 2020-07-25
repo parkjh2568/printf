@@ -6,19 +6,15 @@
 #    By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/25 11:02:46 by junhypar          #+#    #+#              #
-#    Updated: 2020/07/25 11:08:46 by junhypar         ###   ########.fr        #
+#    Updated: 2020/07/25 13:09:59 by junhypar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-SRCS	=
-
-SRCS2	=
+SRCS	=	
 
 OBJS	=	${SRCS:.c=.o}
-
-OBJS2	=	${SRCS2:.c=.o}
 
 CC		=	gcc -Wall -Wextra -Werror
 
@@ -28,15 +24,16 @@ all:		${NAME}
 			${CC} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
+			$(MAKE) bonus -C ./libft
+			cp libft/libft.a ${NAME}
 			ar rc ${NAME} ${OBJS}
 
-bonus:		${OBJS}
-			ar rc ${NAME} ${OBJS} ${OBJS2}
-
 clean:
-			rm -f ${OBJS} ${OBJS2}
+			$(MAKE) clean -C ./libft
+			rm -f ${OBJS}
 
 fclean:		clean
+			$(MAKE) fclean -C ./libft
 			rm -f ${NAME}
 
 re:			fclean all
