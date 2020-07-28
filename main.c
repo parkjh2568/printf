@@ -27,4 +27,16 @@ int main()
 	a = printf("oh this is = [%3.7d]\n", 3267);
 	b = ft_printf("oh this is = [%3.7d] ", 3267);
 	printf("\n 3.7 a = %d, b = %d\n\n",a,b);
+	a = printf("oh this is = [%08.5d]\n", 34);
+	b = ft_printf("oh this is = [%08.5d] ", 34);
+	printf("\n 08.5 a = %d, b = %d\n\n",a,b);
+	a = printf("oh this is = [%08.3d]\n", -8434);
+	b = ft_printf("oh this is = [%08.3d] ", -8434);
+	printf("\n 08.3 a = %d, b = %d\n\n",a,b);
+	a = printf("oh this is = [%.3d]\n", 0);
+	b = ft_printf("oh this is = [%.3d] ", 0);
+	printf("\n 0 a = %d, b = %d\n\n",a,b);
+	a = printf("oh this is = [%5.d]\n", 0);
+	b = ft_printf("oh this is = [%5.d] ", 0);
+	printf("\n 5. a = %d, b = %d\n\n",a,b);
 }
