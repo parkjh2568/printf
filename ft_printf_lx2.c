@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_x2.c                                     :+:      :+:    :+:   */
+/*   ft_printf_lx2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 13:48:09 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 18:43:59 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 18:44:40 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	x_sequens_5(int len, char *out, char *num)
+void	lx_sequens_5(int len, char *out, char *num)
 {
 	ft_memcpy(out, num, len);
 }
 
-int		x_mk_size(t_calcul con, char *num_c)
+int		lx_mk_size(t_calcul con, char *num_c)
 {
 	int size;
 
@@ -33,7 +33,7 @@ int		x_mk_size(t_calcul con, char *num_c)
 	return (size);
 }
 
-int		mk_hex_size(long long num)
+int		l_mk_hex_size(long long num)
 {
 	int i = 0;
 	while (num)
@@ -45,7 +45,7 @@ int		mk_hex_size(long long num)
 	return (i);
 }
 
-char	*x_mk_hex(long long num)
+char	*lx_mk_hex(long long num)
 {
 	char	*hx;
 	char	*out;
@@ -55,8 +55,8 @@ char	*x_mk_hex(long long num)
 	if (num == 0)
 		return (ft_strdup("0"));
 	i = 0;
-	hx = "0123456789abcdef";
-	size = mk_hex_size(num);
+	hx = "0123456789ABCDEF";
+	size = l_mk_hex_size(num);
 	out = malloc(sizeof(char) * (size + 1));
 	while (size--)
 	{

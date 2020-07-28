@@ -7,4 +7,6 @@ int main()
 	ft_printf("%7x\n",33);
 	printf("%5x\n",52625);
 	ft_printf("%5x\n",52625);
+	printf("%5X\n",52625);
+	ft_printf("%5X\n",52625);
 }
