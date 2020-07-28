@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 15:18:32 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 21:56:07 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int		ft_printf_d(const char *input, int i, va_list lst, char per_wd)
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
 	num_i = va_arg(lst, int);
+	mine = 0;
 	if (num_i < 0)
 	{
 		mine = 1;
