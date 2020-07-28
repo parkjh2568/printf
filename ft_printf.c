@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 12:27:44 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 18:45:19 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 19:35:39 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,14 @@ int		config_type(const char *input, int i, int *j)
 	return (0);
 }
 
-int		print_pp(void)
-{
-	write(1, "%", 1);
-	return (1);
-}
-
 int		config_type2(int conf, const char *input, int i, va_list lst)
 {
 	if (conf == 1)
-		return (print_pp());
+		return (ft_printf_pp(input, i, lst, per_wd(conf)));
 	else if (conf == 3)
 		return (ft_printf_s(input, i, lst, per_wd(conf)));
+	else if (conf == 4)
+		return (ft_printf_p(input, i, lst, per_wd(conf)));
 	else if (conf == 5)
 		return (ft_printf_d(input, i, lst, per_wd(conf)));
 	else if (conf == 6)
