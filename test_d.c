@@ -39,4 +39,7 @@ int main()
 	a = printf("oh this is = [%5.d]\n", 0);
 	b = ft_printf("oh this is = [%5.d] ", 0);
 	printf("\n 5. a = %d, b = %d\n\n",a,b);
+	a = printf("oh this is = [%.0d]\n", 0);
+	b = ft_printf("oh this is = [%.0d] ", 0);
+	printf("\n 0 a = %d, b = %d\n\n",a,b);
 }

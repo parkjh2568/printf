@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_d2.c                                     :+:      :+:    :+:   */
+/*   ft_printf_u2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 13:48:09 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 14:50:47 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 17:20:29 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	d_sequens_5(int len, int mine, char *out, char *num)
+void	u_sequens_5(int len, char *out, char *num)
 {
-	if (mine == 1)
-	{
-		out[0] = '-';
-		ft_memcpy(out + 1, num, len);
-	}
-	else
-		ft_memcpy(out, num, len);
+	ft_memcpy(out, num, len);
 }
 
-int		d_mk_size(t_calcul con, int mine, char *num_c)
+int		u_mk_size(t_calcul con, char *num_c)
 {
 	int size;
 
 	size = 0;
 	if (con.dotbf < ft_strlen(num_c) && con.dotafter >= ft_strlen(num_c))
-		size = con.dotafter + mine;
+		size = con.dotafter;
 	else if (con.dotbf < ft_strlen(num_c) && con.dotafter < ft_strlen(num_c))
-		size = ft_strlen(num_c) + mine;
+		size = ft_strlen(num_c);
 	else if (con.dotbf == 0 && con.dotafter > ft_strlen(num_c))
-		size = con.dotafter + mine;
+		size = con.dotafter;
 	else
 		size = con.dotbf;
 	return (size);

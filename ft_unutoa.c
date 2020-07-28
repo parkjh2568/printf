@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utoa.c                                          :+:      :+:    :+:   */
+/*   ft_unutoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 13:11:24 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 17:10:34 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 17:33:01 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ftu_cot(int n)
+int		ftunu_cot(long long n)
 {
 	int cot;
 
@@ -25,53 +25,48 @@ int		ftu_cot(int n)
 	return (cot);
 }
 
-void	putu_in(char *out, int n, int count)
+void	putunu_in(char *out, long long n, long long count)
 {
 	int i;
-	int m;
 
-	if (n < 0)
-		m = -1;
-	else
-		m = 1;
 	i = 0;
 	while (i <= (count - 1) && n != 0)
 	{
-		out[count - i - 1] = ((n % 10) * m) + '0';
+		out[count - i - 1] = (n % 10) + '0';
 		n = n / 10;
 		i++;
 	}
 	out[count] = 0;
 }
 
-void	nu_count(int *count, int *n)
+void	nun_count(long long *count, long long *n)
 {
 	if (*n == 0)
 		*count = 1;
 	else
 	{
-		*count = *count + ftu_cot(*n);
+		*count = *count + ftunu_cot(*n);
 	}
 }
 
-void	putu_zero(char *out)
+void	putunu_zero(char *out)
 {
 	out[0] = '0';
 	out[1] = '\0';
 }
 
-char	*ft_utoa(int n)
+char	*ft_unutoa(long long n)
 {
-	int		count;
-	char	*out;
+	long long			count;
+	char				*out;
 
 	count = 0;
-	nu_count(&count, &n);
+	nun_count(&count, &n);
 	if (!(out = (char *)malloc(sizeof(char) * (count + 1))))
 		return (NULL);
 	if (n == 0)
-		putu_zero(out);
+		putunu_zero(out);
 	else
-		putu_in(out, n, count);
+		putunu_in(out, n, count);
 	return (out);
 }
