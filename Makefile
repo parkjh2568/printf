@@ -6,13 +6,13 @@
 #    By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/25 11:02:46 by junhypar          #+#    #+#              #
-#    Updated: 2020/07/25 18:08:48 by junhypar         ###   ########.fr        #
+#    Updated: 2020/07/28 13:28:23 by junhypar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libftprintf.a
 
-SRCS	=	ft_printf.c ft_printf_d.c utils1.c	
+SRCS	=	ft_printf.c ft_printf_d.c utils1.c utils2.c ft_utoa.c
 
 OBJS	=	${SRCS:.c=.o}
 

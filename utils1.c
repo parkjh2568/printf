@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 17:11:08 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/25 20:08:54 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 13:28:02 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ft_putchar(char *s)
 	int i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		write(1, &s[i], 1);
 		i++;
@@ -48,9 +48,13 @@ char		per_wd(int i)
 		return (' ');
 }
 
-int			ft_aatoi(char c)
+int			make_t2(const char *inp, int i, int n)
 {
-	return ((c - '0'));
+	int c;
+
+	c = n * 10;
+	c = c + ft_aatoi(inp[i]);
+	return (c);
 }
 
 t_calcul	make_t(const char *inp, int i, char wd)
@@ -58,31 +62,29 @@ t_calcul	make_t(const char *inp, int i, char wd)
 	t_calcul	con;
 
 	con = list_set();
-	while(inp[++i] != wd)
+	while (inp[++i] != wd)
 	{
 		if (inp[i] == '-' && con.min == 0)
 			con.min = 1;
+		else if (inp[i] == '*' && con.dot == 0)
+			con.bfstar = 1;
+		else if (inp[i] == '*' && con.dot == 1)
+			con.afstar = 1;
 		else if (inp[i] == '.')
 			con.dot = 1;
 		else if (inp[i] == '0' && con.dotbf == 0 && con.zr == 0 && con.dot == 0)
 			con.zr = 1;
 		else if ((inp[i] >= '0' && inp[i] <= '9') && con.dot == 0)
-		{
-			con.dotbf = con.dotbf * 10;
-			con.dotbf = con.dotbf + ft_aatoi(inp[i]);
-		}
+			con.dotbf = make_t2(inp, i, con.dotbf);
 		else if ((inp[i] >= '0' && inp[i] <= '9') && con.dot == 1)
-		{
-			con.dotafter = con.dotafter * 10;
-			con.dotafter = con.dotafter + ft_aatoi(inp[i]);
-		}
+			con.dotafter = make_t2(inp, i, con.dotafter);
 		else
-			break;
+			break ;
 	}
 	return (con);
 }
 
-t_calcul list_set(void)
+t_calcul	list_set(void)
 {
 	t_calcul a;
 
@@ -90,7 +92,8 @@ t_calcul list_set(void)
 	a.dotafter = 0;
 	a.dot = 0;
 	a.min = 0;
-	a.star = 0;
+	a.bfstar = 0;
+	a.afstar = 0;
 	a.zr = 0;
 	return (a);
 }
