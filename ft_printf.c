@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 12:27:44 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 17:31:46 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 17:48:40 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int		config_type2(int conf, const char *input, int i, va_list lst)
 		return (ft_printf_d(input, i, lst, per_wd(conf)));
 	else if (conf == 7)
 		return (ft_printf_u(input, i, lst, per_wd(conf)));
+	else if (conf == 8)
+		return (ft_printf_x(input, i, lst, per_wd(conf)));
 	return (0);
 }
 
