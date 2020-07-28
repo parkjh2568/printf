@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 13:29:00 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/07/28 14:05:52 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,9 @@ void	d_sequens_3(char *num, t_calcul con, int mine, char *out)
 	int	len;
 
 	len = ft_strlen(num);
-	if (con.dotbf != 0 && mine == 1 && con.min == 1)
-		out[0] = '-';
 	if (con.min == 1)
-	{
-		if (mine == 1)
-			ft_memcpy(out + 1, num, len);
-		else
-			ft_memcpy(out, num, len);
-	}
-	else if (con.dotbf != 0)
+		d_sequens_5(len, mine, out, num);	
+	else if (con.dotbf != 0 && con.dotbf > len)
 	{
 		ft_memcpy(out + (con.dotbf - len), num, len);
 		if (mine == 1 && con.zr == 0)
@@ -52,10 +45,7 @@ void	d_sequens_3(char *num, t_calcul con, int mine, char *out)
 			out[0] = '-';
 	}
 	else
-	{
-		out[0] = '-';
-		ft_memcpy(out + 1, num, len);
-	}
+		d_sequens_5(len, mine, out, num);	
 }
 
 int		d_sequens_2(char *num_c, t_calcul con, int mine)
@@ -63,13 +53,7 @@ int		d_sequens_2(char *num_c, t_calcul con, int mine)
 	char	*out;
 	int		size;
 
-	size = 0;
-	if (con.dotbf == 0 && con.dotafter > ft_strlen(num_c))
-		size = con.dotafter + mine;
-	else if (con.dotbf == 0 && con.dotafter < ft_strlen(num_c))
-		size = ft_strlen(num_c) + mine;
-	else
-		size = con.dotbf;
+	size = d_mk_size(con, mine, num_c);	
 	if (!(out = malloc(sizeof(char) * (size + 1))))
 		return (0);
 	ft_bzero(out, size + 1);
