@@ -32,90 +32,90 @@ Test 437 (p_basic) : FAILED.
     First line of code: {return test("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);}
       expected return value : 156
       your return value     : 129
-      expected output : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      your output     : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
-      expected (nonprintable as hex) : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      actual   (nonprintable as hex) : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
+      expected output : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      your output     : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
+      expected (nonprintable as hex) : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      actual   (nonprintable as hex) : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
 
 Test 438 (p_width_fit) : FAILED.
     First line of code: {return test("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);      expected return value : 1012
       your return value     : 1012
-      expected output : "                                                           0x108d961b8                                                           0x108d961b9          "
-      your output     : "                                                             0x8d961b8                                                             0x8d961b9          "
-      expected (nonprintable as hex) : "                                                           0x108d961b8                                                           0x108d961b9          "
-      actual   (nonprintable as hex) : "                                                             0x8d961b8                                                             0x8d961b9          "
+      expected output : "                                                           0x10ff011b8                                                           0x10ff011b9          "
+      your output     : "                                                             0xff011b8                                                             0xff011b9          "
+      expected (nonprintable as hex) : "                                                           0x10ff011b8                                                           0x10ff011b9          "
+      actual   (nonprintable as hex) : "                                                             0xff011b8                                                             0xff011b9          "
 
 Test 439 (p_width_nofit) : FAILED.
     First line of code: {return test("%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);}
       expected return value : 156
       your return value     : 129
-      expected output : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      your output     : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
-      expected (nonprintable as hex) : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      actual   (nonprintable as hex) : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
+      expected output : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      your output     : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
+      expected (nonprintable as hex) : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      actual   (nonprintable as hex) : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
 
 Test 440 (p_width_16) : FAILED.
     First line of code: {return test("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);      expected return value : 222
       your return value     : 222
-      expected output : "     0x108d961b8     0x108d961b9     0x108d961ba     0x108d961bc     0x108d961c0     0x108d961c4     0x108d961c8     0x108d961d0     0x108d961d8     0"
-      your output     : "       0x8d961b8       0x8d961b9       0x8d961ba       0x8d961bc       0x8d961c0       0x8d961c4       0x8d961c8       0x8d961d0       0x8d961d8      "
-      expected (nonprintable as hex) : "     0x108d961b8     0x108d961b9     0x108d961ba     0x108d961bc     0x108d961c0     0x108d961c4     0x108d961c8     0x108d961d0     0x108d961d8     0"
-      actual   (nonprintable as hex) : "       0x8d961b8       0x8d961b9       0x8d961ba       0x8d961bc       0x8d961c0       0x8d961c4       0x8d961c8       0x8d961d0       0x8d961d8      "
+      expected output : "     0x10ff011b8     0x10ff011b9     0x10ff011ba     0x10ff011bc     0x10ff011c0     0x10ff011c4     0x10ff011c8     0x10ff011d0     0x10ff011d8     0"
+      your output     : "       0xff011b8       0xff011b9       0xff011ba       0xff011bc       0xff011c0       0xff011c4       0xff011c8       0xff011d0       0xff011d8      "
+      expected (nonprintable as hex) : "     0x10ff011b8     0x10ff011b9     0x10ff011ba     0x10ff011bc     0x10ff011c0     0x10ff011c4     0x10ff011c8     0x10ff011d0     0x10ff011d8     0"
+      actual   (nonprintable as hex) : "       0xff011b8       0xff011b9       0xff011ba       0xff011bc       0xff011c0       0xff011c4       0xff011c8       0xff011d0       0xff011d8      "
 
 Test 441 (p_width_8) : FAILED.
     First line of code: {return test("%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);}
       expected return value : 156
       your return value     : 129
-      expected output : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      your output     : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
-      expected (nonprintable as hex) : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      actual   (nonprintable as hex) : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
+      expected output : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      your output     : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
+      expected (nonprintable as hex) : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      actual   (nonprintable as hex) : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
 
 Test 442 (p_width_32) : FAILED.
     First line of code: {return test("%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);      expected return value : 455
       your return value     : 455
-      expected output : "                     0x108d961b8                     0x108d961b9                     0x108d961ba                     0x108d961bc                     0"
-      your output     : "                       0x8d961b8                       0x8d961b9                       0x8d961ba                       0x8d961bc                      "
-      expected (nonprintable as hex) : "                     0x108d961b8                     0x108d961b9                     0x108d961ba                     0x108d961bc                     0"
-      actual   (nonprintable as hex) : "                       0x8d961b8                       0x8d961b9                       0x8d961ba                       0x8d961bc                      "
+      expected output : "                     0x10ff011b8                     0x10ff011b9                     0x10ff011ba                     0x10ff011bc                     0"
+      your output     : "                       0xff011b8                       0xff011b9                       0xff011ba                       0xff011bc                      "
+      expected (nonprintable as hex) : "                     0x10ff011b8                     0x10ff011b9                     0x10ff011ba                     0x10ff011bc                     0"
+      actual   (nonprintable as hex) : "                       0xff011b8                       0xff011b9                       0xff011ba                       0xff011bc                      "
 
 Test 443 (p_width_fit_lj) : FAILED.
     First line of code: {return test("%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10      expected return value : 1012
       your return value     : 1012
-      expected output : "0x108d961b8                                                           0x108d961b9                                                           0x108d961b"
-      your output     : "0x8d961b8                                                             0x8d961b9                                                             0x8d961ba "
-      expected (nonprintable as hex) : "0x108d961b8                                                           0x108d961b9                                                           0x108d961b"
-      actual   (nonprintable as hex) : "0x8d961b8                                                             0x8d961b9                                                             0x8d961ba "
+      expected output : "0x10ff011b8                                                           0x10ff011b9                                                           0x10ff011b"
+      your output     : "0xff011b8                                                             0xff011b9                                                             0xff011ba "
+      expected (nonprintable as hex) : "0x10ff011b8                                                           0x10ff011b9                                                           0x10ff011b"
+      actual   (nonprintable as hex) : "0xff011b8                                                             0xff011b9                                                             0xff011ba "
 
 Test 444 (p_width_nofit_lj) : FAILED.
     First line of code: {return test("%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);      expected return value : 156
       your return value     : 129
-      expected output : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      your output     : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
-      expected (nonprintable as hex) : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      actual   (nonprintable as hex) : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
+      expected output : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      your output     : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
+      expected (nonprintable as hex) : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      actual   (nonprintable as hex) : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
 
 Test 445 (p_width_16_lj) : FAILED.
     First line of code: {return test("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10      expected return value : 222
       your return value     : 222
-      expected output : "0x108d961b8     0x108d961b9     0x108d961ba     0x108d961bc     0x108d961c0     0x108d961c4     0x108d961c8     0x108d961d0     0x108d961d8     0x108d"
-      your output     : "0x8d961b8       0x8d961b9       0x8d961ba       0x8d961bc       0x8d961c0       0x8d961c4       0x8d961c8       0x8d961d0       0x8d961d8       0x8d96"
-      expected (nonprintable as hex) : "0x108d961b8     0x108d961b9     0x108d961ba     0x108d961bc     0x108d961c0     0x108d961c4     0x108d961c8     0x108d961d0     0x108d961d8     0x108d"
-      actual   (nonprintable as hex) : "0x8d961b8       0x8d961b9       0x8d961ba       0x8d961bc       0x8d961c0       0x8d961c4       0x8d961c8       0x8d961d0       0x8d961d8       0x8d96"
+      expected output : "0x10ff011b8     0x10ff011b9     0x10ff011ba     0x10ff011bc     0x10ff011c0     0x10ff011c4     0x10ff011c8     0x10ff011d0     0x10ff011d8     0x10ff"
+      your output     : "0xff011b8       0xff011b9       0xff011ba       0xff011bc       0xff011c0       0xff011c4       0xff011c8       0xff011d0       0xff011d8       0xff01"
+      expected (nonprintable as hex) : "0x10ff011b8     0x10ff011b9     0x10ff011ba     0x10ff011bc     0x10ff011c0     0x10ff011c4     0x10ff011c8     0x10ff011d0     0x10ff011d8     0x10ff"
+      actual   (nonprintable as hex) : "0xff011b8       0xff011b9       0xff011ba       0xff011bc       0xff011c0       0xff011c4       0xff011c8       0xff011d0       0xff011d8       0xff01"
 
 Test 446 (p_width_8_lj) : FAILED.
     First line of code: {return test("%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);      expected return value : 156
       your return value     : 129
-      expected output : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      your output     : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
-      expected (nonprintable as hex) : "0x108d961b80x108d961b90x108d961ba0x108d961bc0x108d961c00x108d961c40x108d961c80x108d961d00x108d961d80x108d961e00x108d961e80x108d961f0"
-      actual   (nonprintable as hex) : "0x8d961b80x8d961b90x8d961ba0x8d961bc0x8d961c00x8d961c40x8d961c80x8d961d00x8d961d80x8d961e00x8d961e80x8d961f0"
+      expected output : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      your output     : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
+      expected (nonprintable as hex) : "0x10ff011b80x10ff011b90x10ff011ba0x10ff011bc0x10ff011c00x10ff011c40x10ff011c80x10ff011d00x10ff011d80x10ff011e00x10ff011e80x10ff011f0"
+      actual   (nonprintable as hex) : "0xff011b80xff011b90xff011ba0xff011bc0xff011c00xff011c40xff011c80xff011d00xff011d80xff011e00xff011e80xff011f0"
 
 Test 447 (p_width_32_lj) : FAILED.
     First line of code: {return test("%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10      expected return value : 455
       your return value     : 455
-      expected output : "0x108d961b8                     0x108d961b9                     0x108d961ba                     0x108d961bc                     0x108d961c0           "
-      your output     : "0x8d961b8                       0x8d961b9                       0x8d961ba                       0x8d961bc                       0x8d961c0             "
-      expected (nonprintable as hex) : "0x108d961b8                     0x108d961b9                     0x108d961ba                     0x108d961bc                     0x108d961c0           "
-      actual   (nonprintable as hex) : "0x8d961b8                       0x8d961b9                       0x8d961ba                       0x8d961bc                       0x8d961c0             "
+      expected output : "0x10ff011b8                     0x10ff011b9                     0x10ff011ba                     0x10ff011bc                     0x10ff011c0           "
+      your output     : "0xff011b8                       0xff011b9                       0xff011ba                       0xff011bc                       0xff011c0             "
+      expected (nonprintable as hex) : "0x10ff011b8                     0x10ff011b9                     0x10ff011ba                     0x10ff011bc                     0x10ff011c0           "
+      actual   (nonprintable as hex) : "0xff011b8                       0xff011b9                       0xff011ba                       0xff011bc                       0xff011c0             "
 
