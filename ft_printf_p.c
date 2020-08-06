@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 11:11:09 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 16:47:33 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int		p_sequens_2(char *num_c, t_calcul con)
 	ft_putchar(out);
 	free(out);
 	out = 0;
+	free(num_c);
+	num_c = 0;
 	return (size);
 }
 
@@ -110,6 +112,8 @@ int		ft_printf_p(const char *input, int i, va_list lst, char per_wd)
 		con.dotbf = va_arg(lst, int);
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
+	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
+		con = set_min_input(con);
 	num_i =  va_arg(lst, unsigned long long);
 	len = p_sequens_1(num_i, con);
 	return (len);

@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 14:51:40 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 11:25:50 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 16:48:48 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		s_sequens_2(char *wod, t_calcul con)
 	if (!(out = malloc(sizeof(char) * (size + 1))))
 		return (0);
 	ft_bzero(out, size + 1);
-	if (con.zr == 1 && con.min == 0)
+	if (con.zr == 1 && con.dot == 0 && con.min != 1)
 		ft_memset(out, '0', size);
 	else
 		ft_memset(out, ' ', size);
@@ -116,6 +116,8 @@ int		ft_printf_s(const char *input, int i, va_list lst, char per_wd)
 		con.dotbf = va_arg(lst, int);
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
+	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
+		con = set_min_input(con);
 	if(!(wod = va_arg(lst, char *)))
 		wod = ft_strdup("(null)");
 	len = s_sequens_1(wod, con);

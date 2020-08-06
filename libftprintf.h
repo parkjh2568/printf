@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 12:28:20 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 11:23:53 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 12:03:47 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void			ft_putchar(char *s);
 char			per_wd(int i);
 char			*ft_utoa(int n);
 int				ft_aatoi(char c);
+t_calcul		set_min_input(t_calcul con);
 #endif

@@ -3,7 +3,7 @@
 int main()
 {
 	int a, b;
-	a = printf("oh this is = [%-10.6d]\n", -987);
+/*	a = printf("oh this is = [%-10.6d]\n", -987);
 	b = ft_printf("oh this is = [%-10.6d] ", -987);
 	printf("\n -10.6 a = %d, b = %d\n\n",a,b);
 	a = printf("oh this is = [%10.6d]\n", -987);
@@ -41,5 +41,8 @@ int main()
 	printf("\n 5. a = %d, b = %d\n\n",a,b);
 	a = printf("oh this is = [%.0d]\n", 0);
 	b = ft_printf("oh this is = [%.0d] ", 0);
-	printf("\n 0 a = %d, b = %d\n\n",a,b);
+	printf("\n 0 a = %d, b = %d\n\n",a,b);*/
+	a = printf("|%-3.*d|\n",4,-135);
+	b = ft_printf("|%-3.*d|\n",4,-135);
+	printf("%d %d",a,b);
 }

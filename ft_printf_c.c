@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 19:24:42 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 11:40:34 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 16:55:39 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		c_sequens_1(t_calcul con, char wod)
 		if (!(out = malloc(sizeof(char) * (con.dotbf + 1))))
 			return (0);
 		ft_bzero(out, con.dotbf + 1);
-		if (con.zr == 1 && con.min == 0)
+		if (con.zr == 1 && con.dot == 0 && con.min != 1)
 			ft_memset(out, '0', con.dotbf);
 		else
 			ft_memset(out, ' ', con.dotbf);
@@ -72,6 +72,8 @@ int		ft_printf_c(const char *input, int i, va_list lst, char per_wd)
 		con.dotbf = va_arg(lst, int);
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
+	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
+		con = set_min_input(con);
 	wod = (char)va_arg(lst, int);
 	len = c_sequens_1(con, wod);
 	return (len);

@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 19:24:42 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 19:40:06 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 13:02:34 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int		ft_printf_pp(const char *input, int i, va_list lst, char per_wd)
 		con.dotbf = va_arg(lst, int);
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
+	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
+		con = set_min_input(con);
 	len = pp_sequens_1(con);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 17:11:08 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 13:28:02 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 12:50:42 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ t_calcul	make_t(const char *inp, int i, char wd)
 	con = list_set();
 	while (inp[++i] != wd)
 	{
-		if (inp[i] == '-' && con.min == 0)
-			con.min = 1;
+		if (inp[i] == '-')
+			con.min++;
 		else if (inp[i] == '*' && con.dot == 0)
 			con.bfstar = 1;
 		else if (inp[i] == '*' && con.dot == 1)
