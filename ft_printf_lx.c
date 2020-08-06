@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 18:46:17 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 11:13:24 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int		ft_printf_lx(const char *input, int i, va_list lst, char per_wd)
 		con.dotbf = va_arg(lst, int);
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
-	num_i =  va_arg(lst, unsigned int);
+	num_i =  va_arg(lst, unsigned long long);
 	len = lx_sequens_1(num_i, con);
 	return (len);
 }

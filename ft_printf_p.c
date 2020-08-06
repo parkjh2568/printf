@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/07/28 19:45:06 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 11:11:09 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ char	*p_sequens_4(char *num, t_calcul con)
 	int		size;
 	char	*out;
 
-	size = con.dotafter;
+	size = con.dotafter + 2;
 	len = ft_strlen(num);
 	if (!(out = malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	ft_bzero(out, size + 1);
+	num[1] = '0';
 	ft_memset(out, '0', size);
 	ft_memcpy(out + (size - len), num, len);
+	out[0] = '0';
+	out[1] = 'x';
 	free(num);
 	return (out);
 }
@@ -56,7 +59,10 @@ int		p_sequens_2(char *num_c, t_calcul con)
 	else
 		ft_memset(out, ' ', size);
 	if (con.dotafter != 0 && ft_strlen(num_c) <= con.dotafter)
+	{
 		num_c = p_sequens_4(num_c, con);
+		size = size + 2;
+	}
 	p_sequens_3(num_c, con, out);
 	ft_putchar(out);
 	free(out);
@@ -104,7 +110,7 @@ int		ft_printf_p(const char *input, int i, va_list lst, char per_wd)
 		con.dotbf = va_arg(lst, int);
 	else if (con.afstar == 1)
 		con.dotafter = va_arg(lst, int);
-	num_i =  va_arg(lst, unsigned int);
+	num_i =  va_arg(lst, unsigned long long);
 	len = p_sequens_1(num_i, con);
 	return (len);
 }

@@ -3,6 +3,6 @@ int main()
 {
 	char *k;
 	k = "0";
-	printf("%p\n\n", k);
-	ft_printf("%p", k);
+	printf("%70lld\n\n", (long long int)&k);
+	ft_printf("%70d", &k);
 }
