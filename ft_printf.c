@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 12:27:44 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 11:26:58 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 18:51:45 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,11 @@ int		ft_printf(const char *input, ...)
 {
 	va_list	lst;
 	char	*word;
+	int		out;
 
 	word = ft_strdup((char *)input);
 	va_start(lst, input);
-	return (search_word(input, lst, word, 0));
+	out = search_word(input, lst, word, 0);
+	va_end(lst);
+	return (out);
 }

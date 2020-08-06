@@ -42,7 +42,7 @@ int main()
 	a = printf("oh this is = [%.0d]\n", 0);
 	b = ft_printf("oh this is = [%.0d] ", 0);
 	printf("\n 0 a = %d, b = %d\n\n",a,b);*/
-	a = printf("|%-3.*d|\n",4,-135);
-	b = ft_printf("|%-3.*d|\n",4,-135);
+	a = printf("|%40.50d|\n",50);
+	b = ft_printf("|%40.50d|\n",50);
 	printf("%d %d",a,b);
 }

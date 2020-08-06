@@ -6,11 +6,23 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 19:24:42 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 16:55:39 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 17:29:29 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+void	ft_pputchar(char *out, int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		write(1, &out[i], 1);
+		i++;
+	}
+}
 
 void	c_sequens_2(t_calcul con, char *out, char wod)
 {
@@ -36,7 +48,7 @@ int		c_sequens_1(t_calcul con, char wod)
 
 	if (con.dotbf == 0)
 	{
-		write(1, &wod, 1);
+		ft_pputchar(&wod, 1);
 		return (1);
 	}
 	else
@@ -49,7 +61,7 @@ int		c_sequens_1(t_calcul con, char wod)
 		else
 			ft_memset(out, ' ', con.dotbf);
 		c_sequens_2(con, out, wod);
-		ft_putchar(out);
+		ft_pputchar(out, con.dotbf);
 		free(out);
 		out = 0;
 		return (con.dotbf);

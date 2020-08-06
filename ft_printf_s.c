@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 14:51:40 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 16:48:48 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 17:34:00 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	s_sequens_3(char *wod, char *out, t_calcul con, int size)
 				ft_memcpy((out + (size - len)), wod, len);
 		}
 		else
-			{
+		{
 			if (con.min == 1)
 				ft_memcpy(out, wod, con.dotafter);
 			else
@@ -118,7 +118,7 @@ int		ft_printf_s(const char *input, int i, va_list lst, char per_wd)
 		con.dotafter = va_arg(lst, int);
 	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
 		con = set_min_input(con);
-	if(!(wod = va_arg(lst, char *)))
+	if (!(wod = va_arg(lst, char *)))
 		wod = ft_strdup("(null)");
 	len = s_sequens_1(wod, con);
 	return (len);

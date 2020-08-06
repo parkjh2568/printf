@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 16:47:33 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 17:35:03 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void	p_sequens_3(char *num, t_calcul con, char *out)
 
 	len = ft_strlen(num);
 	if (con.min == 1)
-		p_sequens_5(len, out, num);	
+		p_sequens_5(len, out, num);
 	else if (con.dotbf != 0 && con.dotbf > len)
 		ft_memcpy(out + (con.dotbf - len), num, len);
 	else
-		p_sequens_5(len, out, num);	
+		p_sequens_5(len, out, num);
 }
 
 int		p_sequens_2(char *num_c, t_calcul con)
@@ -50,7 +50,7 @@ int		p_sequens_2(char *num_c, t_calcul con)
 	char	*out;
 	int		size;
 
-	size = p_mk_size(con, num_c);	
+	size = p_mk_size(con, num_c);
 	if (!(out = malloc(sizeof(char) * (size + 1))))
 		return (0);
 	ft_bzero(out, size + 1);
@@ -86,7 +86,7 @@ int		p_sequens_1(long long num_i, t_calcul con)
 	else
 		num_c = p_mk_hex(num_i);
 	len2 = ft_strlen(num_c);
-	if ((con.dotbf == 0 || (len2 > con.dotbf)) && con.dotafter == 0) 
+	if ((con.dotbf == 0 || (len2 > con.dotbf)) && con.dotafter == 0)
 	{
 		ft_putchar(num_c);
 		len = len + ft_strlen(num_c);
@@ -99,8 +99,8 @@ int		p_sequens_1(long long num_i, t_calcul con)
 int		ft_printf_p(const char *input, int i, va_list lst, char per_wd)
 {
 	int				len;
-	long long 		num_i;
-	t_calcul	con;
+	long long		num_i;
+	t_calcul		con;
 
 	con = make_t(input, i, per_wd);
 	if (con.bfstar == 1 && con.afstar == 1)
@@ -114,7 +114,7 @@ int		ft_printf_p(const char *input, int i, va_list lst, char per_wd)
 		con.dotafter = va_arg(lst, int);
 	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
 		con = set_min_input(con);
-	num_i =  va_arg(lst, unsigned long long);
+	num_i = va_arg(lst, unsigned long long);
 	len = p_sequens_1(num_i, con);
 	return (len);
 }

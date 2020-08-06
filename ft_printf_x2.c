@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 13:48:09 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 10:59:07 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 17:55:34 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ int		x_mk_size(t_calcul con, char *num_c)
 		size = ft_strlen(num_c);
 	else if (con.dotbf == 0 && con.dotafter > ft_strlen(num_c))
 		size = con.dotafter;
+	else if (con.dotbf == con.dotafter && con.dotbf >= ft_strlen(num_c))
+		size = con.dotbf;
+	else if (con.dotbf == ft_strlen(num_c) && con.dotafter <= ft_strlen(num_c))
+		size = con.dotbf;
+	else if (con.dotbf >= ft_strlen(num_c) && con.dotafter >= con.dotbf)
+		size = con.dotafter;
 	else
 		size = con.dotbf;
 	return (size);
@@ -35,7 +41,9 @@ int		x_mk_size(t_calcul con, char *num_c)
 
 int		mk_hex_size(long long num)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 	while (num)
 	{
 		if (num != 0)

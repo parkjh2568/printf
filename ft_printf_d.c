@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 17:03:52 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 18:04:32 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	d_sequens_3(char *num, t_calcul con, int mine, char *out)
 
 	len = ft_strlen(num);
 	if (con.min == 1)
-		d_sequens_5(len, mine, out, num);	
+		d_sequens_5(len, mine, out, num);
 	else if (con.dotbf != 0 && con.dotbf > len)
 	{
 		ft_memcpy(out + (con.dotbf - len), num, len);
 		if (mine == 1 && con.zr == 1 && con.dot == 0)
 			out[0] = '-';
-		else if (mine == 1) 
+		else if (mine == 1)
 			out[con.dotbf - len - 1] = '-';
 	}
 	else
@@ -85,7 +85,7 @@ int		d_sequens_1(int num_i, t_calcul con, int mine)
 	else
 		num_c = ft_utoa(num_i);
 	len2 = ft_strlen(num_c) + mine;
-	if ((con.dotbf == 0 || (len2 > con.dotbf)) && con.dotafter == 0) 
+	if ((con.dotbf == 0 || (len2 > con.dotbf)) && con.dotafter == 0)
 	{
 		if (mine == 1)
 		{
