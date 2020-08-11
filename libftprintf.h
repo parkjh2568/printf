@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 12:28:20 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/11 14:32:15 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/06 19:25:47 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void			x_sequens_5(int len, char *out, char *num);
 int				x_mk_size(t_calcul con, char *num_c);
 char			*x_mk_hex(long long num);
 
-int				ft_printf_lx(const char *input, int i, va_list lst, char per_wd);
+int				ft_printf_lx(const char *input, int i, va_list lst,
+							char per_wd);
 void			lx_sequens_5(int len, char *out, char *num);
 int				lx_mk_size(t_calcul con, char *num_c);
 char			*lx_mk_hex(long long num);
@@ -53,7 +54,8 @@ void			p_sequens_5(int len, char *out, char *num);
 int				p_mk_size(t_calcul con, char *num_c);
 char			*p_mk_hex(long long num);
 
-int				ft_printf_pp(const char *input, int i, va_list lst, char per_wd);
+int				ft_printf_pp(const char *input, int i, va_list lst,
+							char per_wd);
 
 int				ft_printf_c(const char *input, int i, va_list lst, char per_wd);
 
