@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 17:35:03 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/11 15:32:33 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ int		p_sequens_2(char *num_c, t_calcul con)
 	int		size;
 
 	size = p_mk_size(con, num_c);
+	if (con.dotafter != 0 && ft_strlen(num_c) <= con.dotafter)
+	{
+		num_c = p_sequens_4(num_c, con);
+		size = size + 2;
+	}
 	if (!(out = malloc(sizeof(char) * (size + 1))))
 		return (0);
 	ft_bzero(out, size + 1);
@@ -58,11 +63,6 @@ int		p_sequens_2(char *num_c, t_calcul con)
 		ft_memset(out, '0', size);
 	else
 		ft_memset(out, ' ', size);
-	if (con.dotafter != 0 && ft_strlen(num_c) <= con.dotafter)
-	{
-		num_c = p_sequens_4(num_c, con);
-		size = size + 2;
-	}
 	p_sequens_3(num_c, con, out);
 	ft_putchar(out);
 	free(out);
