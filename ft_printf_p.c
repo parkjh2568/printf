@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/13 10:55:07 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/13 11:01:50 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,6 @@ int		p_sequens_2(char *num_c, t_calcul con)
 	else
 		ft_memset(out, ' ', size);
 	p_sequens_3(num_c, con, out);
-
-	out[size] = 0;
-
 	ft_putchar(out);
 	free(out);
 	out = 0;
