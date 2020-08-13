@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 13:48:09 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/06 17:56:39 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/13 10:56:11 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		p_mk_size(t_calcul con, char *num_c)
 	return (size);
 }
 
-int		p_mk_hex_size(long long num)
+int		p_mk_hex_size(unsigned long long num)
 {
 	int i;
 
@@ -53,7 +53,7 @@ int		p_mk_hex_size(long long num)
 	return (i);
 }
 
-char	*p_mk_hex(long long num)
+char	*p_mk_hex(unsigned long long num)
 {
 	char	*hx;
 	char	*out;

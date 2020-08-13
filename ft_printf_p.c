@@ -6,7 +6,7 @@
 /*   By: junhypar <junhypar@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/25 16:59:26 by junhypar          #+#    #+#             */
-/*   Updated: 2020/08/11 22:13:04 by junhypar         ###   ########.fr       */
+/*   Updated: 2020/08/13 10:55:07 by junhypar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		p_sequens_2(char *num_c, t_calcul con)
 	return (size);
 }
 
-int		p_sequens_1(long long num_i, t_calcul con)
+int		p_sequens_1(unsigned long long num_i, t_calcul con)
 {
 	char	*num_c;
 	int		len;
@@ -101,9 +101,9 @@ int		p_sequens_1(long long num_i, t_calcul con)
 
 int		ft_printf_p(const char *input, int i, va_list lst, char per_wd)
 {
-	int				len;
-	long long		num_i;
-	t_calcul		con;
+	int						len;
+	unsigned long long		num_i;
+	t_calcul				con;
 
 	con = make_t(input, i, per_wd);
 	if (con.bfstar == 1 && con.afstar == 1)
@@ -117,7 +117,7 @@ int		ft_printf_p(const char *input, int i, va_list lst, char per_wd)
 		con.dotafter = va_arg(lst, int);
 	if (con.dotafter < 0 || con.dotbf < 0 || con.min > 1)
 		con = set_min_input(con);
-	num_i = (long long)va_arg(lst, unsigned int);
+	num_i = va_arg(lst, unsigned long long);
 	len = p_sequens_1(num_i, con);
 	return (len);
 }
